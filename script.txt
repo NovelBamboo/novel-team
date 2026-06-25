@@ -1,0 +1,2 @@
+npx repomix@latest . --include "*.md" --style markdown -o Synthetic-Teams.md
+

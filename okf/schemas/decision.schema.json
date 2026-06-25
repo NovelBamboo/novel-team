@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "schema.decision",
+  "title": "Decision Schema",
+  "type": "object",
+  "description": "Schema for a decision record or Architecture Decision Record.",
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "type": { "const": "decision" },
+    "status": {
+      "type": "string",
+      "enum": ["proposed", "accepted", "deprecated", "superseded", "draft", "final", "archived"]
+    },
+    "problem": { "type": "string" },
+    "context": { "type": "string" },
+    "decision": { "type": "string" },
+    "alternatives_considered": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "option": { "type": "string" },
+          "pros": { "type": "array", "items": { "type": "string" } },
+          "cons": { "type": "array", "items": { "type": "string" } },
+          "why_rejected": { "type": "string" }
+        },
+        "required": ["option"]
+      }
+    },
+    "arguments_for": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "arguments_against": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "risks": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "dissenting_opinions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": { "type": "string" },
+          "opinion": { "type": "string" }
+        }
+      }
+    },
+    "decision_owner": { "type": "string" },
+    "commitment_date": { "type": "string", "format": "date-time" },
+    "consequences": {
+      "type": "object",
+      "properties": {
+        "positive": { "type": "array", "items": { "type": "string" } },
+        "negative": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  },
+  "required": ["id", "title", "type", "decision", "alternatives_considered"]
+}

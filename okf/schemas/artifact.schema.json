@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "schema.artifact",
+  "title": "Artifact Schema",
+  "type": "object",
+  "description": "Schema for a Synthetic Teams artifact — a structured, versioned, inspectable output.",
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "type": { "const": "artifact" },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "stable", "deprecated"]
+    },
+    "version": { "type": "string" },
+    "producer": { "type": "string" },
+    "consumer": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "lifecycle": {
+      "type": "string",
+      "description": "Lifecycle stages of the artifact"
+    },
+    "contents": {
+      "type": "object",
+      "description": "Artifact-specific content fields"
+    },
+    "validation_rules": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "related_workflows": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "depends_on": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "required": ["id", "title", "type", "producer", "consumer", "lifecycle"]
+}

@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "schema.evaluation",
+  "title": "Evaluation Schema",
+  "type": "object",
+  "description": "Schema for evaluation results associated with an artifact or role execution.",
+  "properties": {
+    "id": { "type": "string" },
+    "artifact_id": { "type": "string" },
+    "evaluator_role": { "type": "string" },
+    "level": {
+      "type": "integer",
+      "description": "Evaluation hierarchy level (0-4)",
+      "minimum": 0,
+      "maximum": 4
+    },
+    "scores": {
+      "type": "object",
+      "properties": {
+        "correctness": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "completeness": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "maintainability": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "confidence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "groundedness": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "risk": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        }
+      }
+    },
+    "kpi_metrics": {
+      "type": "object",
+      "description": "Role-specific KPI measurements",
+      "additionalProperties": {
+        "type": ["number", "string"]
+      }
+    },
+    "adversarial_metrics": {
+      "type": "object",
+      "properties": {
+        "diversity_score": { "type": "integer" },
+        "objection_rate": { "type": "number" },
+        "consensus_speed": { "type": "string" },
+        "relitigation_rate": { "type": "number" },
+        "execution_alignment": { "type": "number" }
+      }
+    },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "severity": {
+            "type": "string",
+            "enum": ["blocking", "non-blocking", "informational"]
+          },
+          "description": { "type": "string" },
+          "recommendation": { "type": "string" }
+        }
+      }
+    }
+  },
+  "required": ["id", "artifact_id", "evaluator_role", "level", "scores"]
+}
