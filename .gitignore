@@ -1,5 +1,5 @@
 # git rm --cached .obsidian/workspace.json
-.obsidian
+.obsidian/
 .todos/
 .sidecar/
 .sidecar-agent
