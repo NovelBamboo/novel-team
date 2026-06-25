@@ -14,7 +14,7 @@ Use td usage -q after first read.
 
 Before making changes:
 
-1. Read `okf/INDEX.md` first — understand the ontology map and canonical terms.
+1. Read `KNOWLEDGE_MAP.md` first — understand the ontology topology, physical layout, and navigation.
 2. Read `ONTOLOGY_BOUNDARIES.md` — know what relationships are allowed.
 3. Read `KNOWLEDGE_TASKS.md` — classify your task scope.
 4. Query concept frontmatter (IDs, relationships) before opening prose.
@@ -32,7 +32,7 @@ Before making changes:
 - YAML frontmatter on every ontology file.
 - Explicit relationships before prose explanation.
 - Specification precedes rationale.
-- Terminology uses canonical forms only (see `okf/INDEX.md` vocabulary table).
+- Terminology uses canonical forms only (see `KNOWLEDGE_MAP.md` vocabulary section).
 - Every role has a documented weakness/failure mode.
 - Every artifact has a producer and consumer role.
 - Every workflow has ordered stages and explicit gates.
@@ -45,7 +45,7 @@ Before making changes:
 
 Order of operations:
 
-1. `okf/INDEX.md` — find the concept ID, path, and type.
+1. `KNOWLEDGE_MAP.md` — understand the topology and find the entity path.
 2. `ONTOLOGY_BOUNDARIES.md` — verify the relationship is allowed.
 3. `grep` for canonical IDs in frontmatter (`rg "id: concept\." concepts/`).
 4. Open exact files.
@@ -71,13 +71,13 @@ Split concepts, not files. A concept needing 300+ prose lines is probably two co
 
 Before changing a concept file:
 
-1. Does this ID already exist? (check `INDEX.md`)
+1. Does this ID already exist? (check `KNOWLEDGE_MAP.md` machine-readable section)
 2. Is the new relationship in the allowed matrix? (check `ONTOLOGY_BOUNDARIES.md`)
 3. Can a relationship change replace a prose change?
 4. Does this affect any schemas in `okf/schemas/`?
 5. Does this affect any existing examples in `okf/examples/`?
 6. Does this introduce ambiguity with another concept?
-7. Does this require an INDEX.md update?
+7. Does this require a KNOWLEDGE_MAP.md update?
 
 ---
 
