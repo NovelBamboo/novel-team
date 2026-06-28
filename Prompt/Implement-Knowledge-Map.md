@@ -1,4 +1,4 @@
-Add repo map to `00_Agent/` **REPO_MAP.md, the is the most valuable idea**.
+Add repo map to `Agent/` **REPO_MAP.md, the is the most valuable idea**.
 
 Rename it to something like:
 
