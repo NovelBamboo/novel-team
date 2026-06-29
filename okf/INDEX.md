@@ -30,6 +30,12 @@ This directory is an OKF-compliant knowledge base. Every file is a single concep
 | concepts/telemetry.md | concept.telemetry | concept |
 | concepts/trust.md | concept.trust | concept |
 | concepts/workflow.md | concept.workflow | concept |
+| concepts/cognitive-load.md | concept.cognitive-load | concept |
+| concepts/team-api.md | concept.team-api | concept |
+| concepts/team-topology.md | concept.team-topology | concept |
+| concepts/organizational-memory.md | concept.organizational-memory | concept |
+| concepts/dynamic-topology.md | concept.dynamic-topology | concept |
+| concepts/epistemic-topology.md | concept.epistemic-topology | concept |
 | roles/facilitator.md | role.facilitator | role |
 | roles/builder.md | role.builder | role |
 | roles/reviewer.md | role.reviewer | role |
@@ -50,6 +56,10 @@ This directory is an OKF-compliant knowledge base. Every file is a single concep
 | examples/regulatory-arbitrage/README.md | example.regulatory-arbitrage | example |
 | examples/software-team/README.md | example.software-team | example |
 | patterns/trusted-advisor.md | pattern.trusted-advisor | pattern |
+| patterns/stream-aligned-team.md | pattern.stream-aligned-team | pattern |
+| patterns/platform-team.md | pattern.platform-team | pattern |
+| patterns/enabling-team.md | pattern.enabling-team | pattern |
+| patterns/specialist-team.md | pattern.specialist-team | pattern |
 | reference/glossary.md | reference.glossary | reference |
 | schemas/role-card.schema.json | schema.role-card | schema |
 | schemas/artifact.schema.json | schema.artifact | schema |

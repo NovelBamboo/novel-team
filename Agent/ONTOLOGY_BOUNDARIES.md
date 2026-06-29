@@ -25,6 +25,7 @@ Used by:
 | Persona | User-facing description of a role | `okf/concepts/` (type tag) |
 | Schema | Validation specification | `okf/schemas/` |
 | Pattern | Reusable structure | `okf/patterns/` |
+| Topology | Team composition and interaction structure | `okf/concepts/team-topology.md` |
 | Example | Concrete instance | `okf/examples/` |
 
 ---
@@ -187,6 +188,7 @@ These are never allowed:
 |------|------|----------|
 | Creating new role types | Breaks schema, workflow assumptions | Must update `role-card.schema.json` first |
 | Adding new capabilities | Requires knowledge base and workflow template updates | Must register domain mappings in Capability Planner knowledge base |
+| Adding new topology patterns | Requires team-topology concept update | Must register in topology registry and create pattern file |
 | Renaming a canonical ID | Orphans all relationship references | Requires INDEX.md + all referrers update |
 | Deleting a concept | Breaks dependents | Must deprecate via `supersedes` or `replaces` first |
 | Changing a relationship type | May invalidate graph traversal | Verify with `npm run okf:validate` |

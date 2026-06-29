@@ -23,6 +23,8 @@ produces:
 related:
   - concept.evaluation
   - concept.telemetry
+  - concept.organizational-memory
+  - concept.team-api
   - role.capability-planner
 ---
 

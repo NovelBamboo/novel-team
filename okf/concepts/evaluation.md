@@ -15,6 +15,8 @@ depends_on:
 related:
   - concept.governance
   - concept.trust
+  - concept.cognitive-load
+  - concept.epistemic-topology
 ---
 
 ## Specification
@@ -56,6 +58,18 @@ Each artifact receives scores on:
 | Builder | Accepted-output rate, cycle time, build success rate, reopened defects |
 | Operator | Deploy success rate, MTTR, rollback frequency, infra-policy violations |
 | Facilitator | Queue latency, handoff loss rate, unresolved-conflict age, trace completeness |
+| Capability Planner | Role selection accuracy, topology efficiency, classification accuracy |
+
+### Cognitive Load Metrics
+
+Cognitive load extends evaluation by measuring whether each role's context remains within budget:
+
+| Role | Load Dimensions | Threshold Signal |
+|---|---|---|
+| Builder | Files touched, dependencies, context tokens, tool invocations | Review findings increase, quality drops |
+| Reviewer | Files reviewed, comments, defects, coverage breadth | Missed defects, shallow comments |
+| Analyst | Requirements derived, decision records, unknowns | Ambiguity slips through |
+| Truth-Teller | Claims examined, sources consulted, contradictions | Confidence inflation |
 
 ### Adversarial Metrics
 

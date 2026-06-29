@@ -21,6 +21,9 @@ produces:
 related:
   - concept.governance
   - concept.activation-condition
+  - concept.team-topology
+  - concept.dynamic-topology
+  - concept.cognitive-load
   - role.capability-planner
 ---
 

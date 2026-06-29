@@ -24,8 +24,18 @@ related:
   - concept.activation-condition
   - concept.evaluation
   - concept.telemetry
+  - concept.cognitive-load
+  - concept.team-topology
+  - concept.team-api
+  - concept.organizational-memory
+  - concept.dynamic-topology
+  - concept.epistemic-topology
   - role.capability-planner
   - artifact.task-manifest
+  - pattern.stream-aligned-team
+  - pattern.platform-team
+  - pattern.enabling-team
+  - pattern.specialist-team
 ---
 
 ## Specification

@@ -16,6 +16,8 @@ related:
   - concept.decision-record
   - concept.evaluation
   - concept.governance
+  - concept.epistemic-topology
+  - concept.team-topology
 ---
 
 ## Specification

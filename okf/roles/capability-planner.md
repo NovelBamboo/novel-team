@@ -22,6 +22,10 @@ consumes:
 related:
   - role.facilitator
   - concept.synthetic-teams
+  - concept.team-topology
+  - concept.dynamic-topology
+  - concept.cognitive-load
+  - concept.team-api
   - concept.artifact
   - concept.evaluation
 authority:
