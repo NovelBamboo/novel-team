@@ -3,7 +3,7 @@ id: concept.artifact
 title: Artifact
 type: concept
 status: stable
-version: 1.0
+version: 1.1
 owner: Synthetic Teams
 tags:
   - artifact
@@ -12,6 +12,7 @@ tags:
 depends_on:
   - concept.workflow
 produces:
+  - artifact.task-manifest
   - artifact.spec
   - artifact.adr
   - artifact.review-report
@@ -22,6 +23,7 @@ produces:
 related:
   - concept.evaluation
   - concept.telemetry
+  - role.capability-planner
 ---
 
 ## Specification
@@ -48,7 +50,15 @@ Conversation discovers ideas; committed artifacts move work between roles. Chat 
 ### Artifact Graph
 
 ```
-Intent
+Intent (raw input)
+    │
+    ▼
+Task Manifest (Facilitator — classification only)
+    │
+    ├──▶ Capability Planner → Team Topology
+    │
+    ▼
+Analyst
   ├── Spec
   ├── ADR
   └── Task Graph
@@ -72,3 +82,5 @@ Telemetry
 ## Rationale
 
 Artifacts exist because they decouple work from the workers. A spec written by an Analyst can be implemented by a Builder who never spoke to the Analyst, reviewed by a Reviewer who never saw the conversation, and verified by a Truth-Teller who only trusts the evidence. This decoupling is what makes Synthetic Teams scalable and auditable.
+
+The Task Manifest extends this decoupling to the entry point of the pipeline. The Facilitator classifies raw intent into a structured manifest without rewriting the specification, preserving the separation between intake (structural analysis) and analysis (domain analysis).

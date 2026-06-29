@@ -17,6 +17,7 @@ Used by:
 | Type | Description | Directory |
 |------|-------------|-----------|
 | Role | Bounded function definition | `okf/roles/` |
+| Capability | Expertise selection and team composition | `okf/roles/capability-planner.md` |
 | Artifact | Produced/consumed document | `okf/artifacts/` |
 | Concept | Foundational idea | `okf/concepts/` |
 | Workflow | Ordered stage sequence | `okf/workflows/` |
@@ -185,6 +186,7 @@ These are never allowed:
 | Area | Risk | Protocol |
 |------|------|----------|
 | Creating new role types | Breaks schema, workflow assumptions | Must update `role-card.schema.json` first |
+| Adding new capabilities | Requires knowledge base and workflow template updates | Must register domain mappings in Capability Planner knowledge base |
 | Renaming a canonical ID | Orphans all relationship references | Requires INDEX.md + all referrers update |
 | Deleting a concept | Breaks dependents | Must deprecate via `supersedes` or `replaces` first |
 | Changing a relationship type | May invalidate graph traversal | Verify with `npm run okf:validate` |

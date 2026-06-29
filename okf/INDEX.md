@@ -36,6 +36,8 @@ This directory is an OKF-compliant knowledge base. Every file is a single concep
 | roles/analyst.md | role.analyst | role |
 | roles/operator.md | role.operator | role |
 | roles/truth-teller.md | role.truth-teller | role |
+| roles/capability-planner.md | role.capability-planner | role |
+| artifacts/task-manifest.md | artifact.task-manifest | artifact |
 | artifacts/spec.md | artifact.spec | artifact |
 | artifacts/adr.md | artifact.adr | artifact |
 | artifacts/review-report.md | artifact.review-report | artifact |

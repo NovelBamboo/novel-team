@@ -34,7 +34,7 @@
         "alias": { "type": "string" },
         "archetypeFamily": {
           "type": "string",
-          "enum": ["Analyst", "Builder", "Operator", "Truth-Teller", "Reviewer", "Facilitator"]
+          "enum": ["Analyst", "Builder", "Capability Planner", "Operator", "Truth-Teller", "Reviewer", "Facilitator"]
         },
         "level": {
           "type": "string",

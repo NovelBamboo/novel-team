@@ -55,6 +55,9 @@ Every span contains:
 
 ```
 TaskSpan
+  IntakeSpan
+  ConsultationSpan
+  AssemblySpan
   AnalysisSpan
   BuildSpan
   ReviewSpan
@@ -77,7 +80,8 @@ role, model, tool, artifact, evaluation_score, cost, duration, success
 | Builder | Files touched, commands run, time spent, dependencies | commits, tests, docs, migration scripts |
 | Reviewer | Findings, severity, recommendations | review-report.md, security-review.md |
 | Operator | Deploys, rollbacks, commands, environment changes | runbooks, deploy logs, incident reports |
-| Facilitator | Everything (full state) | ledger.json, state-summary.md, decision-log.md |
+| Facilitator | Everything (full state) | task-manifest.md, ledger.json, state-summary.md, decision-log.md |
+| Capability Planner | Domain classification, role selection, workflow template | team-topology.md, capability-rationale.md |
 
 ---
 

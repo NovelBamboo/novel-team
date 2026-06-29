@@ -23,6 +23,7 @@ tags:
 | Artifact-First Principle | Work is carried between roles via committed artifacts, not conversation | concept.artifact |
 | Authority | Bounded decision right assigned to a role within a workflow stage | concept.authority |
 | Builder | Role that produces implementation from accepted specifications | role.builder |
+| Capability Planner | Role that converts Task Manifest into Team Topology — owns domain detection, role selection, workflow templates, and governance rules | role.capability-planner |
 | Decision Gate | Validation step that must pass before work progresses to the next stage | concept.workflow |
 | Decision Record | Document capturing a team decision with alternatives, arguments, and dissenting opinions | artifact.decision-record |
 | Evaluation | Measurement of artifact and role quality at multiple levels of independence | concept.evaluation |
@@ -37,6 +38,7 @@ tags:
 | Spec | Executable requirements document produced by the Analyst | artifact.spec |
 | Synthetic Team | Role-constrained system governing human+AI work production | concept.synthetic-teams |
 | Task Graph | Ordered decomposition of spec into assigned, dependent tasks | artifact.task-graph |
+| Task Manifest | Normalized, classified representation of raw input produced by Facilitator intake — not a specification | artifact.task-manifest |
 | Telemetry | Observable output of traces, artifacts, evaluations, and tool executions | concept.telemetry |
 | Truth-Teller | Role that independently verifies claims, assumptions, risks, and evidence | role.truth-teller |
 | Trust | Measurable outcome of visible reasoning, explicit trade-offs, and distributed accountability | concept.trust |

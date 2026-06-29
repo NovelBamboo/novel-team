@@ -3,29 +3,46 @@ id: workflow.default
 title: Default Workflow
 type: workflow
 status: stable
-version: 1.0
+version: 1.1
 owner: Synthetic Teams
 tags:
   - workflow
   - default
   - pipeline
+  - dynamic-assembly
 depends_on:
   - concept.workflow
+  - role.facilitator
+  - role.capability-planner
   - role.analyst
   - role.builder
   - role.reviewer
   - role.truth-teller
   - role.operator
-  - role.facilitator
 related:
   - concept.adversarial
   - concept.governance
   - concept.artifact
+  - artifact.task-manifest
 entry_conditions:
-  - Intent received from human sponsor
-  - Success criteria defined
-  - Constraints documented
+  - Raw intent received from human sponsor
+  - Human available for consultation if needed
 stages:
+  - role: role.facilitator
+    phase: intake
+    produces:
+      - artifact.task-manifest
+    authority: Classify and normalize input; do not rewrite specification
+  - role: role.facilitator
+    phase: consultation
+    produces:
+      - consultation responses
+    authority: Query specialists in parallel for triage; bounded to lightweight assessment
+  - role: role.capability-planner
+    produces:
+      - team topology
+      - workflow selection
+    authority: Select roles and workflow for task; cannot modify task scope
   - role: role.analyst
     produces:
       - artifact.spec
@@ -62,6 +79,7 @@ gates:
     condition: Human sponsor authorizes irreversible action
     approving_role: role.human
 required_artifacts:
+  - artifact.task-manifest
   - artifact.spec
   - artifact.adr
   - artifact.review-report
@@ -71,6 +89,7 @@ exit_conditions:
   - All artifacts versioned and stored
   - Trace spans closed
   - Decision record archived
+  - Organizational learning updated
 failure_recovery:
   on_reject: Return to preceding stage with rejection rationale
   on_block: Escalate to human sponsor via Facilitator
@@ -85,13 +104,23 @@ failure_recovery:
 sequenceDiagram
     participant H as Human sponsor
     participant F as Facilitator
+    participant CP as Capability Planner
     participant A as Analyst
     participant B as Builder
     participant R as Reviewer
     participant T as Truth-Teller
     participant O as Operator
 
-    H->>F: Submit intent, constraints, success criteria
+    H->>F: Submit raw intent
+    Note over F: Phase 1: Intake
+    F->>F: Classify, normalize, identify domain
+    Note over F: Consultation (parallel triage)
+    F->>F: Query Security, Compliance, Operator, Truth-Teller
+    F-->>F: Consultation responses
+    F->>CP: Task Manifest
+    Note over CP: Team Assembly
+    CP->>CP: Select roles, workflow, artifacts
+    CP-->>F: Team topology
     F->>A: Create spec, tests, ADRs, task graph
     A-->>F: Spec packet
     F->>B: Implement against accepted spec
@@ -113,8 +142,28 @@ sequenceDiagram
 ### Role Sequence
 
 ```
-Human → Facilitator → Analyst → Builder → Reviewer → Truth-Teller → Operator → Human
+Human → Facilitator (Intake) → Facilitator (Consultation) → Capability Planner (Assembly) → Analyst → Builder → Reviewer → Truth-Teller → Operator → Human
 ```
+
+### Phase Details
+
+**Phase 1 — Intake (Facilitator):**
+- Accept raw input from human sponsor
+- Perform structural analysis (not domain analysis)
+- Classify task type, domain, existing artifacts
+- Produce Task Manifest
+
+**Phase 2 — Consultation (Facilitator):**
+- Query specialists in parallel: Security, Compliance, Operator, Truth-Teller
+- Short, bounded assessments — not full analyses
+- Responses inform team composition
+
+**Phase 3 — Team Assembly (Capability Planner):**
+- Detect domain and required expertise
+- Select core + domain-specific roles
+- Select workflow template
+- Define required artifacts
+- Return team topology to Facilitator
 
 ### Gate Logic
 
@@ -125,4 +174,4 @@ Human → Facilitator → Analyst → Builder → Reviewer → Truth-Teller → 
 
 ### Continuous Role
 
-The Facilitator maintains continuity across all stages. The Facilitator does not hold stage authority but ensures handoffs complete, state is preserved, and escalations reach the human sponsor.
+The Facilitator maintains continuity across all stages. The Facilitator does not hold stage authority but ensures handoffs complete, state is preserved, and escalations reach the human sponsor. The Capability Planner is invoked once during team assembly and may be consulted again if task reclassification is required.
