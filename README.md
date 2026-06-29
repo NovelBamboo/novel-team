@@ -1,10 +1,23 @@
-OKF implementation is complete. Here's what was created:
+# Synthetic Team Framework
+
+The framework is organized into three operational layers:
+
+1. **Governance** (always) — JOA / JOAT: every recommendation must be Justifiable, Observable, Auditable, Trustworthy
+2. **Deliberation** (always) — Observe → Diagnose → Challenge → Decide → Commit: how the team makes decisions
+3. **Production** (optional) — ADREI and other workflows for creating artifacts
+
+---
+
+## OKF Knowledge Base
+
+The following files define the ontology:
 
 ```text
 okf/
 ├── INDEX.md                          — Ontology map, entry points, vocabulary, design rules
-├── concepts/ (14 files)              — Foundational ideas, each with YAML frontmatter
+├── concepts/ (15 files)              — Foundational ideas, each with YAML frontmatter
 │   ├── synthetic-teams.md
+│   ├── deliberation.md
 │   ├── role-card.md
 │   ├── persona-layer.md
 │   ├── rolecard-layer.md
@@ -39,8 +52,10 @@ okf/
 │   ├── workflow.schema.json
 │   ├── decision.schema.json
 │   └── evaluation.schema.json
-├── workflows/ (1 file)               — Executable workflow with gates
-│   └── default.md
+├── workflows/ (3 files)              — Executable workflows with stages and gates
+│   ├── default.md
+│   ├── deliberation.md
+│   └── adrei.md
 ├── patterns/ (1 file)                — Reusable structures
 │   └── trusted-advisor.md
 ├── examples/ (3 dirs)                — Concrete implementations

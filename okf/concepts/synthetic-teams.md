@@ -18,8 +18,11 @@ depends_on:
   - concept.authority
   - concept.governance
   - concept.artifact
+  - concept.deliberation
 produces:
   - concept.trust
+  - workflow.deliberation
+  - workflow.adrei
 related:
   - concept.activation-condition
   - concept.evaluation
@@ -123,6 +126,19 @@ Human → Facilitator (classify & normalize)
 4. Assemble the team dynamically
 5. Execute through ordered pipeline stages
 6. Evaluate and feed back into organizational learning
+
+### Framework Layers
+
+The Synthetic Team Framework is organized into three operational layers:
+
+#### Layer 1 — Governance (always active)
+JOA / JOAT: Every recommendation must be Justifiable, Observable, Auditable, and Trustworthy. This never changes.
+
+#### Layer 2 — Deliberation (always active)
+The Deliberation Cycle (Observe → Diagnose → Challenge → Decide → Commit) governs how the team evaluates options, challenges assumptions, and commits to decisions. Every role participates. This is the heart of the framework.
+
+#### Layer 3 — Production (optional, artifact-dependent)
+Production workflows execute within the commitment phase of deliberation. ADREI (Analyze → Draft → Review → Edit → Integrate) is one production workflow, suitable for creating articles, code, designs, specifications, reports, and documentation.
 
 ### Execution Model
 

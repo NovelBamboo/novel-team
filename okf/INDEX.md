@@ -36,6 +36,7 @@ This directory is an OKF-compliant knowledge base. Every file is a single concep
 | concepts/organizational-memory.md | concept.organizational-memory | concept |
 | concepts/dynamic-topology.md | concept.dynamic-topology | concept |
 | concepts/epistemic-topology.md | concept.epistemic-topology | concept |
+| concepts/deliberation.md | concept.deliberation | concept |
 | roles/facilitator.md | role.facilitator | role |
 | roles/builder.md | role.builder | role |
 | roles/reviewer.md | role.reviewer | role |
@@ -52,6 +53,8 @@ This directory is an OKF-compliant knowledge base. Every file is a single concep
 | artifacts/task-graph.md | artifact.task-graph | artifact |
 | artifacts/runbook.md | artifact.runbook | artifact |
 | workflows/default.md | workflow.default | workflow |
+| workflows/deliberation.md | workflow.deliberation | workflow |
+| workflows/adrei.md | workflow.adrei | workflow |
 | examples/trusted-advisor/README.md | example.trusted-advisor | example |
 | examples/regulatory-arbitrage/README.md | example.regulatory-arbitrage | example |
 | examples/software-team/README.md | example.software-team | example |

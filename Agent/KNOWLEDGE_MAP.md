@@ -29,7 +29,9 @@ Synthetic Team
 │    └── Truth Report
 │
 ├── Workflow (ordered stage sequence)
-│    └── Default
+│    ├── Default
+│    ├── Deliberation Cycle
+│    └── ADREI (Production)
 │
 ├── Principle (invariant rule)
 │
@@ -39,6 +41,7 @@ Synthetic Team
 │    ├── Activation Condition
 │    ├── Adversarial
 │    ├── Authority
+│    ├── Deliberation
 │    ├── Evaluation
 │    ├── Governance
 │    ├── Persona Layer
@@ -71,10 +74,10 @@ Synthetic Team
 ```
 okf/
 ├── INDEX.md              — Entry point table, canonical IDs, relationship types, vocabulary
-├── concepts/             — Foundational ideas (14 files)
+├── concepts/             — Foundational ideas (15 files)
 ├── roles/                — Bounded function definitions (6 files)
 ├── artifacts/            — Produced/consumed documents (7 files)
-├── workflows/            — Ordered stage sequences (1 file)
+├── workflows/            — Ordered stage sequences (3 files)
 ├── schemas/              — JSON Schema validation specs (5 files)
 ├── patterns/             — Reusable structures (1 file)
 ├── examples/             — Concrete instances (3 directories)

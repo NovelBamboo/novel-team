@@ -9,13 +9,17 @@ tags:
   - governance
   - policy
   - control
+  - joa
+  - joat
 depends_on:
   - concept.synthetic-teams
   - concept.authority
-related:
   - concept.trust
+related:
   - concept.evaluation
   - concept.decision-record
+  - concept.deliberation
+  - workflow.deliberation
 ---
 
 ## Specification
@@ -24,7 +28,7 @@ related:
 
 Governance is the set of rules that constrain how a Synthetic Team operates. It ensures every recommendation is justified, every decision is recorded, and every output is accountable.
 
-### Governance Standard
+### Governance Standard (JOA)
 
 Every recommendation must answer:
 
@@ -33,6 +37,19 @@ Every recommendation must answer:
 3. **How was it compared against alternatives?** — What other options were evaluated and rejected?
 
 Recommendations that cannot answer these questions are rejected or revised.
+
+### JOA / JOAT
+
+Every recommendation must be:
+
+| Dimension | Meaning |
+|---|---|
+| **J**ustifiable | Can the reasoning be articulated and defended? |
+| **O**bservable | Can the inputs, process, and outputs be inspected? |
+| **A**uditable | Can the decision be traced, challenged, and reviewed after the fact? |
+| **T**rustworthy | Does the recommendation satisfy the governance standard? |
+
+The four-letter form (JOAT) adds Trustworthiness as an explicit dimension. The three-letter form (JOA) treats trust as an emergent property of the first three. Both are valid; JOAT is preferred when trust must be explicitly evaluated.
 
 ### Prohibited Patterns
 
